@@ -1,18 +1,18 @@
 import React from "react";
-import { FaUsersCog, FaShieldAlt, FaReact, FaTools } from "react-icons/fa";
+import { FaUsersCog, FaShieldAlt, FaVideo, FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-
+// ✅ Animation wrapper
 const MotionDiv = ({ children, delay = 0 }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: 0.7, delay, ease: "easeOut" }}
     >
       {children}
     </motion.div>
@@ -21,55 +21,102 @@ const MotionDiv = ({ children, delay = 0 }) => {
 
 const WhyChooseUs = () => {
   return (
-    <div className="container-fluid pb-2">
-      <div className="container p-5">
+    <div className="relative bg-[#0a1931] text-white py-16 overflow-hidden">
+      {/* ✅ Decorative SVG blobs */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+
+      <div className="relative container mx-auto px-6 lg:px-20 z-10">
+        {/* Heading */}
         <MotionDiv>
-          <div className="section-title text-center relative pb-3 mb-5 mx-auto max-w-xl">
-            <h5 className=" font-helvetica font-bold text-2xl text-gray-900 dark:text-black">Why Choose Us</h5>
-            <h1 className=" font-helvetica mb-0">We Are Here to Grow Your Business Exponentially</h1>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h5 className="text-yellow-400 font-bold uppercase tracking-wider">
+              Why Choose G3 Security
+            </h5>
+            <h1 className="text-3xl md:text-4xl font-bold">
+              Your Safety, Our Top Priority 🔐
+            </h1>
           </div>
         </MotionDiv>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           {/* Left Column */}
-          <div className="space-y-5 p-5">
+          <div className="space-y-10">
             <MotionDiv delay={0.2}>
-              <div className="w-16 h-16 bg-black rounded flex items-center justify-center mb-3">
-                <FaUsersCog className="text-white text-xl" />
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <FaUsersCog className="text-[#0a1931] text-2xl" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Trained Professionals</h4>
+                  <p className="text-gray-300">
+                    Our guards are highly trained to ensure round-the-clock protection for your people and property.
+                  </p>
+                </div>
               </div>
-              <h4 className=" font-helvetica text-2xl font-bold text-gray-900 dark:text-black">Expert Team</h4>
-              <p>
-                Our team consists of seasoned professionals with years of experience in the digital marketing industry...
-              </p>
             </MotionDiv>
+
             <MotionDiv delay={0.4}>
-              <div className="w-16 h-16 bg-black rounded flex items-center justify-center mb-3">
-                <FaShieldAlt className="text-white text-2xl" />
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <FaShieldAlt className="text-[#0a1931] text-2xl" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">24/7 Security Assurance</h4>
+                  <p className="text-gray-300">
+                    We provide continuous monitoring and quick response to any security threats.
+                  </p>
+                </div>
               </div>
-              <h4 className=" font-helvetica text-2xl font-bold text-gray-900 dark:text-black">Confidentiality Assured</h4>
-              <p>We prioritize the security and confidentiality of your financial data.</p>
             </MotionDiv>
           </div>
+
           {/* Middle Image */}
           <MotionDiv delay={0.6}>
-            <div className="h-[70vh] relative">
-              <img src="/pic2.jpg" alt="Feature" className="w-full h-full object-cover rounded" />
+            <div className="relative">
+              <img
+                src="/g-1.jpg"
+                alt="Security Services"
+                className="rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover w-full h-[60vh]"
+              />
+              {/* Decorative floating circle */}
+              <motion.div
+                className="absolute -top-6 -left-6 w-20 h-20 bg-yellow-400 rounded-full shadow-xl"
+                animate={{ y: [0, -15, 0] }}
+                transition={{ repeat: Infinity, duration: 4 }}
+              />
             </div>
           </MotionDiv>
+
           {/* Right Column */}
-          <div className="space-y-5 p-5">
+          <div className="space-y-10">
             <MotionDiv delay={0.8}>
-              <div className="w-16 h-16 bg-black rounded flex items-center justify-center mb-3">
-                <FaReact className="text-white text-3xl" />
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <FaVideo className="text-[#0a1931] text-3xl" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Advanced Surveillance</h4>
+                  <p className="text-gray-300">
+                    Equipped with CCTV monitoring and modern security systems for complete protection.
+                  </p>
+                </div>
               </div>
-              <h4 className=" font-helvetica text-2xl font-bold text-gray-900 dark:text-black">Cost-Effective Solutions</h4>
-              <p>Save on overhead costs without compromising on quality.</p>
             </MotionDiv>
+
             <MotionDiv delay={1.0}>
-              <div className="w-16 h-16 bg-black rounded flex items-center justify-center mb-3">
-                <FaTools className="text-white text-2xl" />
+              <div className="flex items-start gap-4">
+                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
+                  <FaTools className="text-[#0a1931] text-2xl" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold">Tailored Solutions</h4>
+                  <p className="text-gray-300">
+                    From corporate offices to residential complexes, we customize security services for every need.
+                  </p>
+                </div>
               </div>
-              <h4 className=" font-helvetica text-2xl font-bold text-gray-900 dark:text-black">Customized Services</h4>
-              <p>Tailored solutions to address the unique needs of your business.</p>
             </MotionDiv>
           </div>
         </div>

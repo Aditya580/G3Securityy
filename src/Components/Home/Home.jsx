@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { CheckCircleIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import TestimonialSection from "../TestimonialSection/TestimonialSection";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -196,6 +197,7 @@ export default function Home() {
         </motion.div>
       </section>
       <TestimonialSection/>
+      <WhyChooseUs/>
     </>
   );
 }
