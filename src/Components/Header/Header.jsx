@@ -14,38 +14,40 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full z-40">
+    <header className="w-full fixed top-0 z-50">
       {/* Glassmorphic Navbar */}
-      <nav className="backdrop-blur-lg bg-[#0A192F]/80 border-b border-white/10 shadow-md">
+      <nav className="backdrop-blur-lg bg-[#0A192F]/80 border-b border-yellow-500/30 shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
         <div className="flex justify-between items-center mx-auto max-w-7xl px-6 py-3">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="g3group.jpg"
-              className="h-10 w-auto rounded-lg shadow-sm"
+              src="G3Groupbg.png"
+              className="h-14 w-auto rounded-lg shadow-md border border-yellow-500/40"
               alt="Logo"
             />
-            <span className="text-lg font-bold text-white tracking-wide">
-              G3<span className="text-yellow-400">Security</span>
+            <span className="text-xl font-bold tracking-wider bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
+              G3<span className="text-gray-200">Security</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex space-x-8">
+          <div className="hidden lg:flex space-x-10">
             {navLinks.map((link, index) => (
               <NavLink
                 key={index}
                 to={link.to}
                 className={({ isActive }) =>
-                  `relative font-medium text-base transition duration-300 
+                  `relative font-semibold text-base uppercase tracking-wide transition duration-300 
                   ${
                     isActive
-                      ? "text-yellow-400"
+                      ? "bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
                       : "text-gray-300 hover:text-yellow-400"
                   }`
                 }
               >
                 {link.label}
+                {/* underline effect */}
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-yellow-400 to-yellow-200 transition-all duration-300 group-hover:w-full"></span>
               </NavLink>
             ))}
           </div>
@@ -54,7 +56,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               to="/connect"
-              className="ml-4 font-medium text-sm px-4 py-2 rounded-lg bg-yellow-400 text-[#0A192F] shadow-sm hover:bg-yellow-300 transition-all duration-300"
+              className="ml-4 font-semibold text-sm px-5 py-2 rounded-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 text-[#0A192F] shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Connect
             </Link>
@@ -88,7 +90,7 @@ export default function Header() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 right-0 h-full w-64 bg-[#0A192F] shadow-lg z-50 flex flex-col px-6 py-6"
+            className="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-[#0A192F] via-[#1A1F2C] to-[#0A192F] shadow-xl z-50 flex flex-col px-6 py-6"
           >
             {/* Close Button */}
             <button
@@ -106,10 +108,10 @@ export default function Header() {
                   to={link.to}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `font-medium text-lg transition duration-300 
+                    `font-semibold text-lg uppercase tracking-wide transition duration-300 
                     ${
                       isActive
-                        ? "text-yellow-400"
+                        ? "bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,215,0,0.8)]"
                         : "text-gray-300 hover:text-yellow-400"
                     }`
                   }
@@ -123,7 +125,7 @@ export default function Header() {
             <Link
               to="/connect"
               onClick={() => setIsOpen(false)}
-              className="mt-10 font-medium text-sm px-4 py-2 rounded-lg bg-yellow-400 text-[#0A192F] shadow-md hover:bg-yellow-300 transition-all duration-300 text-center"
+              className="mt-10 font-semibold text-sm px-5 py-2 rounded-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 text-[#0A192F] shadow-md hover:shadow-xl transition-all duration-300 text-center"
             >
               Connect
             </Link>

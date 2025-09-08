@@ -21,7 +21,7 @@ export default function Footer() {
         </svg>
       </div>
 
-      {/* Decorative SVG Background Circles */}
+      {/* Decorative Background */}
       <div className="absolute -top-10 -left-10 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
 
@@ -29,18 +29,29 @@ export default function Footer() {
         <div className="md:flex md:justify-between p-5">
           {/* Logo & Contact */}
           <div className="mb-6 md:mb-0 flex flex-col items-start">
-            <Link to="/" className="items-center">
-              <img src="/g3group.jpg" className="mr-3 h-20 mb-4 rounded-lg" alt="Logo" />
+            <Link to="/" className="flex items-center gap-3">
+              <img
+                src="/G3Groupbg.png"
+                className="h-20 mb-2 rounded-lg"
+                alt="Logo"
+              />
+              <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                G3 Security
+              </span>
             </Link>
-            <p className="flex flex-col text-gray-300 space-y-2">
+
+            <p className="flex flex-col text-gray-300 space-y-2 mt-4">
               <span className="flex items-center">
-                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 / +91 8463895466
+                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 /
+                +91 8463895466
               </span>
               <span className="flex items-center">
-                <FaEnvelope className="mr-2 text-yellow-400" /> ganesh.giri76@gmail.com
+                <FaEnvelope className="mr-2 text-yellow-400" />{" "}
+                ganesh.giri76@gmail.com
               </span>
               <span className="flex items-center">
-                <FaMapMarkerAlt className="mr-2 text-yellow-400" /> PLOT NO. 253, WARD NO. 17 , BINDIYA DHAM COLONY, MANDIDEEP DISTT., RAISEN
+                <FaMapMarkerAlt className="mr-2 text-yellow-400" /> PLOT NO. 253,
+                WARD NO. 17 , BINDIYA DHAM COLONY, MANDIDEEP DISTT., RAISEN
               </span>
             </p>
           </div>
@@ -53,10 +64,14 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
+                  <Link to="/" className="hover:text-yellow-400 transition">
+                    Home
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
+                  <Link to="/about" className="hover:text-yellow-400 transition">
+                    About
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -67,10 +82,19 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <a href="#" className="hover:text-yellow-400 transition" target="_blank" rel="noreferrer">Contact</a>
+                  <a
+                    href="#"
+                    className="hover:text-yellow-400 transition"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Contact
+                  </a>
                 </li>
                 <li>
-                  <Link to="/" className="hover:text-yellow-400 transition">Discord</Link>
+                  <Link to="/" className="hover:text-yellow-400 transition">
+                    Discord
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -81,10 +105,14 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <Link to="#" className="hover:text-yellow-400 transition">Privacy Policy</Link>
+                  <Link to="#" className="hover:text-yellow-400 transition">
+                    Privacy Policy
+                  </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-yellow-400 transition">Terms & Conditions</Link>
+                  <Link to="#" className="hover:text-yellow-400 transition">
+                    Terms & Conditions
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -95,7 +123,11 @@ export default function Footer() {
         <div className="bg-[#0d1b2a] p-5 mt-10 rounded-t-xl border-t border-gray-700">
           <div className="flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm">
             <span>
-              © 2025 <span className="text-yellow-400">G3Security</span>. All Rights Reserved.
+              © 2025{" "}
+              <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent font-semibold">
+                G3 Security
+              </span>
+              . All Rights Reserved.
             </span>
             <span className="mt-2 md:mt-0">Made with ❤️ in Bhopal</span>
           </div>

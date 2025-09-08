@@ -21,19 +21,19 @@ const MotionDiv = ({ children, delay = 0 }) => {
 
 const WhyChooseUs = () => {
   return (
-    <div className="relative bg-[#0a1931] text-white py-16 overflow-hidden">
-      {/* ✅ Decorative SVG blobs */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+    <div className="relative bg-white text-gray-900 py-16 overflow-hidden">
+      {/* ✅ Soft golden decorative blobs */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-yellow-200/40 to-yellow-400/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-yellow-300/30 to-yellow-500/20 rounded-full blur-3xl"></div>
 
       <div className="relative container mx-auto px-6 lg:px-20 z-10">
         {/* Heading */}
         <MotionDiv>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h5 className="text-yellow-400 font-bold uppercase tracking-wider">
+            <h5 className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold uppercase tracking-wider">
               Why Choose G3 Security
             </h5>
-            <h1 className="text-3xl md:text-4xl font-bold">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
               Your Safety, Our Top Priority 🔐
             </h1>
           </div>
@@ -45,12 +45,12 @@ const WhyChooseUs = () => {
           <div className="space-y-10">
             <MotionDiv delay={0.2}>
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                  <FaUsersCog className="text-[#0a1931] text-2xl" />
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+                  <FaUsersCog className="text-white text-2xl" />
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold">Trained Professionals</h4>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600">
                     Our guards are highly trained to ensure round-the-clock protection for your people and property.
                   </p>
                 </div>
@@ -59,12 +59,12 @@ const WhyChooseUs = () => {
 
             <MotionDiv delay={0.4}>
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                  <FaShieldAlt className="text-[#0a1931] text-2xl" />
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+                  <FaShieldAlt className="text-white text-2xl" />
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold">24/7 Security Assurance</h4>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600">
                     We provide continuous monitoring and quick response to any security threats.
                   </p>
                 </div>
@@ -78,14 +78,11 @@ const WhyChooseUs = () => {
               <img
                 src="/g-1.jpg"
                 alt="Security Services"
-                className="rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover w-full h-[60vh]"
+                className="rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover w-full 
+                h-56 sm:h-72 md:h-[45vh] lg:h-[55vh]"
               />
-              {/* Decorative floating circle */}
-              <motion.div
-                className="absolute -top-6 -left-6 w-20 h-20 bg-yellow-400 rounded-full shadow-xl"
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 4 }}
-              />
+              {/* Decorative golden circle */}
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full shadow-md"></div>
             </div>
           </MotionDiv>
 
@@ -93,12 +90,12 @@ const WhyChooseUs = () => {
           <div className="space-y-10">
             <MotionDiv delay={0.8}>
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                  <FaVideo className="text-[#0a1931] text-3xl" />
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+                  <FaVideo className="text-white text-3xl" />
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold">Advanced Surveillance</h4>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600">
                     Equipped with CCTV monitoring and modern security systems for complete protection.
                   </p>
                 </div>
@@ -107,12 +104,12 @@ const WhyChooseUs = () => {
 
             <MotionDiv delay={1.0}>
               <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center shadow-lg">
-                  <FaTools className="text-[#0a1931] text-2xl" />
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+                  <FaTools className="text-white text-2xl" />
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold">Tailored Solutions</h4>
-                  <p className="text-gray-300">
+                  <p className="text-gray-600">
                     From corporate offices to residential complexes, we customize security services for every need.
                   </p>
                 </div>
