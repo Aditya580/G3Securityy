@@ -7,11 +7,11 @@ export default function About() {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="relative bg-[#133864] text-white overflow-hidden">
+    <section className="relative bg-gradient-to-b from-white via-white to-yellow-50 text-gray-900 overflow-hidden">
       {/* Top Wavy Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
         <svg
-          className="relative block w-full h-20"
+          className="relative block w-full h-16"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -25,7 +25,7 @@ export default function About() {
              75.65-10.81 151.19-6.6 225.67 8.65 
              54.62 11.12 108.76 27.35 163.78 40.19 
              24.54 5.65 49.12 10.9 74 14.52V0z"
-            className="fill-white opacity-10"
+            className="fill-yellow-100"
           ></path>
         </svg>
       </div>
@@ -42,12 +42,12 @@ export default function About() {
           <img
             src="/manpng.png"
             alt="About us"
-            className="rounded-2xl shadow-2xl w-full max-w-[450px] h-auto"
+            className="rounded-3xl shadow-lg w-full max-w-[450px] h-auto object-cover border border-yellow-200"
           />
 
           {/* Floating Badge */}
           <motion.div
-            className="absolute -bottom-6 -left-6 bg-yellow-400 text-[#0A192F] font-bold px-6 py-4 rounded-2xl shadow-lg"
+            className="absolute -bottom-6 -left-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold px-6 py-4 rounded-2xl shadow-xl"
             initial={{ scale: 0.8 }}
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ repeat: Infinity, duration: 3 }}
@@ -64,18 +64,18 @@ export default function About() {
           transition={{ duration: 1 }}
           className="flex flex-col"
         >
-          <p className="text-yellow-400 font-semibold uppercase tracking-wide">
+          <p className="text-yellow-600 font-semibold uppercase tracking-wider">
             About Us
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold mt-3 leading-snug">
+          <h2 className="text-3xl md:text-4xl font-extrabold mt-3 leading-snug text-gray-900">
             G3 Group Enterprises
           </h2>
-          <p className="mt-6 text-gray-300">
+          <p className="mt-6 text-gray-700 leading-relaxed">
             At G3 Security, we specialize in providing reliable and professional
             manpower workforce solutions across Bhopal, India. With years of
-            experience in the security and workforce management sector, we take
-            pride in being the trusted partner for businesses, residential
-            complexes, educational institutions, and events.
+            expertise in security and workforce management, we’re trusted by
+            businesses, residential complexes, educational institutions, and
+            events.
           </p>
 
           {/* Expandable Section */}
@@ -88,13 +88,13 @@ export default function About() {
                 transition={{ duration: 0.6 }}
                 className="overflow-hidden"
               >
-                <p className="mt-4 text-gray-300">
+                <p className="mt-4 text-gray-700 leading-relaxed">
                   Our mission is simple – to deliver well-trained, disciplined,
                   and committed personnel who ensure safety, efficiency, and
                   peace of mind for our clients.
                 </p>
 
-                <h3 className="mt-6 text-yellow-400 font-semibold">
+                <h3 className="mt-6 text-yellow-700 font-semibold">
                   ✨ Why Choose G3 Security?
                 </h3>
                 <ul className="mt-4 space-y-3">
@@ -105,17 +105,20 @@ export default function About() {
                     "24/7 Availability – Round-the-clock workforce deployment and monitoring.",
                     "Affordable & Reliable – High-quality manpower services at competitive rates.",
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <CheckCircleIcon className="w-6 h-6 text-yellow-400" />
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2 text-gray-700"
+                    >
+                      <CheckCircleIcon className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <h3 className="mt-6 text-yellow-400 font-semibold">
+                <h3 className="mt-6 text-yellow-700 font-semibold">
                   🌍 Our Vision
                 </h3>
-                <p className="mt-2 text-gray-300">
+                <p className="mt-2 text-gray-700 leading-relaxed">
                   To be the leading manpower and security services provider in
                   Bhopal, recognized for our professionalism, reliability, and
                   client satisfaction.
@@ -126,7 +129,7 @@ export default function About() {
 
           {/* CTA Button */}
           <button
-            className="mt-8 bg-yellow-400 text-[#0A192F] font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-yellow-300 transition-all"
+            className="mt-8 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:from-yellow-500 hover:to-yellow-600 transition-all"
             onClick={() => setShowMore(!showMore)}
           >
             {showMore ? "Show Less" : "Learn More"}
@@ -137,7 +140,7 @@ export default function About() {
       {/* Bottom Wavy Divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
         <svg
-          className="relative block w-full h-20"
+          className="relative block w-full h-16"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -151,7 +154,7 @@ export default function About() {
              179.78 12.67V120H0V27.35c42.13 7.63 
              84.26 15.26 126.39 19.74 65.33 7.06 
              130.67 9.35 195.00 9.35z"
-            className="fill-white"
+            className="fill-yellow-100"
           ></path>
         </svg>
       </div>

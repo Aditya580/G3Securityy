@@ -161,7 +161,51 @@ const TestimonialSection = () => {
           </div>
         </div>
 
-        {/* ✅ Team Image */} <div className="mt-16"> <img src="/testimonial.jpg" alt="Our Team" className="w-full max-h-74 object-cover rounded-2xl shadow-lg border-4 border-[#E0BD67]" /> </div>
+       {/* ✅ Team Image Carousel */}
+<div className="mt-16 relative w-full max-w-5xl mx-auto">
+  <div className="relative overflow-hidden rounded-2xl shadow-xl border-4 border-[#E0BD67]/80">
+    <AnimatePresence mode="wait">
+      <motion.img
+        key={index}
+        src={["/testimonial.jpg", "/Housekeeping.jpg", "/EventSecurity.jpg"][index % 3]} 
+        alt="Our Team"
+        className="w-full h-[400px] object-cover"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.8 }}
+      />
+    </AnimatePresence>
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/70 via-transparent to-transparent"></div>
+
+    {/* Caption */}
+    <div className="absolute bottom-6 left-6 text-white drop-shadow-lg">
+      <h3 className="text-xl md:text-2xl font-bold">
+        Meet Our <span className="text-[#E0BD67]">Dedicated Team</span>
+      </h3>
+      <p className="text-sm md:text-base text-gray-200">
+        Professionals committed to your security
+      </p>
+    </div>
+
+    {/* Navigation Arrows */}
+    <button
+      onClick={() => setIndex((index - 1 + 3) % 3)}
+      className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#E0BD67] p-3 rounded-full text-[#0A192F] shadow-lg hover:bg-yellow-400 transition"
+    >
+      <FaChevronLeft size={20} />
+    </button>
+    <button
+      onClick={() => setIndex((index + 1) % 3)}
+      className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#E0BD67] p-3 rounded-full text-[#0A192F] shadow-lg hover:bg-yellow-400 transition"
+    >
+      <FaChevronRight size={20} />
+    </button>
+  </div>
+</div>
+
 
         {/* ✅ Stats Counters (unchanged) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-16">

@@ -177,22 +177,26 @@ export default function Home() {
           Our Trusted Partners
         </h3>
         <motion.div
-          className="flex gap-12 items-center"
+          className="flex gap-16 items-center"
           animate={{ x: ["100%", "-100%"] }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
         >
           {[
-            "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png",
-            "https://i.pinimg.com/1200x/02/5c/31/025c3154853df28af4b4090138a6c135.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            "/partner1.jpg",
+            "partner5.jpg",
+            "partner2.jpg",
+            "partner3.jpg",
+            "Partner6.jpg",
+            "partner4.jpg",
+            "partner7.jpg",
+            "partner8.jpg",
+            "partner9.jpg",
           ].map((logo, idx) => (
             <img
               key={idx}
               src={logo}
               alt="Partner Logo"
-              className="h-16 w-auto object-contain"
+              className="h-[84px] w-auto object-contain"
             />
           ))}
         </motion.div>

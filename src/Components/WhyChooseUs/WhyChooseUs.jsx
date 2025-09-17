@@ -21,16 +21,16 @@ const MotionDiv = ({ children, delay = 0 }) => {
 
 const WhyChooseUs = () => {
   return (
-    <div className="relative bg-white text-gray-900 py-16 overflow-hidden">
-      {/* ✅ Soft golden decorative blobs */}
+    <div className="relative bg-white text-gray-900 py-20 overflow-hidden">
+      {/* ✅ Premium golden background blobs */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-r from-yellow-200/40 to-yellow-400/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-yellow-300/30 to-yellow-500/20 rounded-full blur-3xl"></div>
 
       <div className="relative container mx-auto px-6 lg:px-20 z-10">
         {/* Heading */}
         <MotionDiv>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h5 className="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold uppercase tracking-wider">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h5 className="bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] bg-clip-text text-transparent font-bold uppercase tracking-wider">
               Why Choose G3 Security
             </h5>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
@@ -40,12 +40,12 @@ const WhyChooseUs = () => {
         </MotionDiv>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           {/* Left Column */}
           <div className="space-y-10">
             <MotionDiv delay={0.2}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+              <div className="flex items-start gap-5 p-5 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg hover:shadow-2xl transition">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] rounded-xl flex items-center justify-center shadow-md">
                   <FaUsersCog className="text-white text-2xl" />
                 </div>
                 <div>
@@ -58,8 +58,8 @@ const WhyChooseUs = () => {
             </MotionDiv>
 
             <MotionDiv delay={0.4}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+              <div className="flex items-start gap-5 p-5 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg hover:shadow-2xl transition">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] rounded-xl flex items-center justify-center shadow-md">
                   <FaShieldAlt className="text-white text-2xl" />
                 </div>
                 <div>
@@ -72,25 +72,28 @@ const WhyChooseUs = () => {
             </MotionDiv>
           </div>
 
-          {/* Middle Image */}
+          {/* Middle Image (Fixed Ratio) */}
           <MotionDiv delay={0.6}>
             <div className="relative">
-              <img
-                src="/g-1.jpg"
-                alt="Security Services"
-                className="rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover w-full 
-                h-56 sm:h-72 md:h-[45vh] lg:h-[55vh]"
-              />
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-yellow-400">
+                <img
+                  src="/g-1.jpg"
+                  alt="Security Services"
+                  className="w-full aspect-[3/4] md:aspect-[3/5] lg:aspect-[3/4] object-cover"
+                />
+              </div>
+              {/* Premium gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent rounded-2xl"></div>
               {/* Decorative golden circle */}
-              <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full shadow-md"></div>
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] rounded-full shadow-md"></div>
             </div>
           </MotionDiv>
 
           {/* Right Column */}
           <div className="space-y-10">
             <MotionDiv delay={0.8}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+              <div className="flex items-start gap-5 p-5 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg hover:shadow-2xl transition">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] rounded-xl flex items-center justify-center shadow-md">
                   <FaVideo className="text-white text-3xl" />
                 </div>
                 <div>
@@ -103,8 +106,8 @@ const WhyChooseUs = () => {
             </MotionDiv>
 
             <MotionDiv delay={1.0}>
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-md">
+              <div className="flex items-start gap-5 p-5 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg hover:shadow-2xl transition">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#E0BD67] to-[#E0BD67] rounded-xl flex items-center justify-center shadow-md">
                   <FaTools className="text-white text-2xl" />
                 </div>
                 <div>

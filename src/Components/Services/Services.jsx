@@ -76,11 +76,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative bg-gradient-to-b from-[#0a1931] via-[#132a4f] to-[#0a1931] py-20 text-white">
-      {/* Top Wavy SVG */}
+    <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 text-gray-900">
+      {/* Decorative top waves */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
-          className="relative block w-full h-20"
+          className="relative block w-full h-20 text-yellow-400/20"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
@@ -88,16 +88,16 @@ export default function Services() {
           <path
             d="M0,0V46.29c47.74,22,103.78,29.05,158,17.39,70.05-15.15,136.29-57.3,206-66.85C438.48-13.15,512.34,19.9,583,35.78,663,54.22,743,60,823,44.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
             opacity=".25"
-            className="fill-yellow-500"
+            fill="currentColor"
           ></path>
           <path
             d="M0,0V15.81C47.74,38,103.78,45,158,33.33c70.05-15.16,136.29-57.3,206-66.85C438.48-26.15,512.34,6.9,583,22.78,663,41.22,743,47,823,31.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
             opacity=".5"
-            className="fill-yellow-400"
+            fill="currentColor"
           ></path>
           <path
             d="M0,0V5.81C47.74,28,103.78,35,158,23.33c70.05-15.16,136.29-57.3,206-66.85C438.48-36.15,512.34-3.1,583,12.78,663,31.22,743,37,823,21.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
-            className="fill-yellow-300"
+            fill="currentColor"
           ></path>
         </svg>
       </div>
@@ -105,11 +105,11 @@ export default function Services() {
       <div className="relative container mx-auto px-6 lg:px-20 z-10">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-yellow-400 mb-4">
+          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent mb-4">
             Our Services
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            At G3 Security, we provide reliable manpower solutions tailored to your needs. From skilled workforce to specialized support, we ensure security and efficiency at every step
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            At G3 Security, we provide reliable manpower solutions tailored to your needs. From skilled workforce to specialized support, we ensure security and efficiency at every step.
           </p>
         </div>
 
@@ -118,25 +118,32 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative bg-[#133864] rounded-2xl shadow-lg overflow-hidden group hover:scale-105 transition duration-300"
+              className="relative bg-white border border-yellow-200 rounded-2xl shadow-md overflow-hidden group hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 transition duration-300"
             >
               {/* Background Image */}
               <img
                 src={service.img}
                 alt={service.title}
-                className="w-full h-40 object-cover opacity-70 group-hover:opacity-90 transition"
+                className="w-full h-48 md:h-56 object-cover opacity-90 group-hover:opacity-100 transition"
               />
+
               {/* Card Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold flex items-center gap-2 text-yellow-400">
-                  {service.icon} {service.title}
-                </h3>
-                <p className="mt-3 text-gray-300 text-sm leading-relaxed">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-white shadow-md">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
-              {/* Decorative SVG Circle */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-2xl"></div>
+
+              {/* Decorative Golden Glow */}
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-500/20 rounded-full blur-2xl"></div>
             </div>
           ))}
         </div>
