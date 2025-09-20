@@ -7,6 +7,9 @@ import {
   FaMoneyBillWave,
   FaFileInvoice,
 } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom"; // if using React Router
+
 
 const services = [
   {
@@ -15,6 +18,7 @@ const services = [
       "Precise and timely recording of financial transactions to maintain well-organized financial records.",
     icon: <FaBook />,
     img: "/g2.jpg",
+    link: "/services/retail-security",
   },
   {
     title: "Manpower Services",
@@ -22,13 +26,14 @@ const services = [
       "Holistic accounting solutions to ensure your financial statements are accurate and compliant.",
     icon: <FaCalculator />,
     img: "/g-1.jpg",
+    link: "/services/manpower-services",
   },
   {
     title: "Armed Security Guards",
-    description:
-      "Streamlined handling of payables and receivables to optimize cash flow.",
+    description: "Streamlined handling of payables and receivables to optimize cash flow.",
     icon: <FaMoneyCheckAlt />,
     img: "/g-3.jpg",
+    link: "/services/armed-guards",
   },
   {
     title: "Technical Manpower",
@@ -36,13 +41,14 @@ const services = [
       "Comprehensive assistance in preparing and organizing financial data for seamless audits.",
     icon: <FaClipboardCheck />,
     img: "/g-4.jpg",
+    link: "/services/technical-manpower",
   },
   {
     title: "Housekeeping Services",
-    description:
-      "Dependable payroll management to ensure timely and accurate employee payments.",
+    description: "Dependable payroll management to ensure timely and accurate employee payments.",
     icon: <FaMoneyBillWave />,
     img: "/g-5.jpg",
+    link: "/services/housekeeping",
   },
   {
     title: "Unarmed Security Guards",
@@ -50,6 +56,7 @@ const services = [
       "Expert guidance on tax planning and preparation to ensure compliance with local regulations.",
     icon: <FaFileInvoice />,
     img: "/g-6.jpg",
+    link: "/services/unarmed-guards",
   },
   {
     title: "Corporate Security Guards",
@@ -57,6 +64,7 @@ const services = [
       "Helps in analyzing financial data, tracking expenses, and creating accurate forecasts to optimize business growth.",
     icon: <FaFileInvoice />,
     img: "/services/reporting.jpg",
+    link: "/services/corporate-security",
   },
   {
     title: "Loading Unloading Services",
@@ -64,6 +72,7 @@ const services = [
       "Ensures smooth financial operations by monitoring incoming and outgoing cash, preventing shortages, and maintaining liquidity.",
     icon: <FaFileInvoice />,
     img: "/services/cashflow.jpg",
+    link: "/services/loading-unloading",
   },
   {
     title: "Construction Security",
@@ -71,12 +80,20 @@ const services = [
       "Reviewing, correcting, and organizing financial records to eliminate errors, reconcile accounts, and ensure compliance.",
     icon: <FaFileInvoice />,
     img: "/services/cleanup.jpg",
+    link: "/services/construction-security",
   },
 ];
 
 export default function Services() {
   return (
     <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 text-gray-900">
+        <Helmet>
+        <title>About Us | G3 Security</title>
+        <meta
+          name="description"
+          content="Learn about G3 Security’s history, mission, and team of experts delivering intelligence and cyber advisory services globally."
+        />
+      </Helmet>
       {/* Decorative top waves */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg
@@ -90,15 +107,6 @@ export default function Services() {
             opacity=".25"
             fill="currentColor"
           ></path>
-          <path
-            d="M0,0V15.81C47.74,38,103.78,45,158,33.33c70.05-15.16,136.29-57.3,206-66.85C438.48-26.15,512.34,6.9,583,22.78,663,41.22,743,47,823,31.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
-            opacity=".5"
-            fill="currentColor"
-          ></path>
-          <path
-            d="M0,0V5.81C47.74,28,103.78,35,158,23.33c70.05-15.16,136.29-57.3,206-66.85C438.48-36.15,512.34-3.1,583,12.78,663,31.22,743,37,823,21.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
-            fill="currentColor"
-          ></path>
         </svg>
       </div>
 
@@ -109,7 +117,9 @@ export default function Services() {
             Our Services
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            At G3 Security, we provide reliable manpower solutions tailored to your needs. From skilled workforce to specialized support, we ensure security and efficiency at every step.
+            At G3 Security, we provide reliable manpower solutions tailored to
+            your needs. From skilled workforce to specialized support, we ensure
+            security and efficiency at every step.
           </p>
         </div>
 
@@ -124,26 +134,24 @@ export default function Services() {
               <img
                 src={service.img}
                 alt={service.title}
-                className="w-full h-48 md:h-56 object-cover opacity-90 group-hover:opacity-100 transition"
+                className="w-full h-56 object-cover transition duration-500"
               />
 
-              {/* Card Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 flex items-center justify-center text-white shadow-md">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {service.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-500">
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-200 text-sm mb-4">
                   {service.description}
                 </p>
+                <Link
+                  to={service.link}
+                  className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:from-yellow-500 hover:to-yellow-700 transition"
+                >
+                  Read More
+                </Link>
               </div>
-
-              {/* Decorative Golden Glow */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-500/20 rounded-full blur-2xl"></div>
             </div>
           ))}
         </div>

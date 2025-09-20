@@ -26,7 +26,7 @@ export default function Header() {
               alt="Logo"
             />
             <span className="text-xl font-bold tracking-wider bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 bg-clip-text text-transparent">
-              G3<span className="text-gray-200">Security</span>
+              G3<span className="text-gray-200">Group</span>
             </span>
           </Link>
 
@@ -58,7 +58,7 @@ export default function Header() {
               to="/connect"
               className="ml-4 font-semibold text-sm px-5 py-2 rounded-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 text-[#0A192F] shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              Connect
+              SECURITY SOLUTION
             </Link>
           </div>
 
@@ -127,7 +127,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               className="mt-10 font-semibold text-sm px-5 py-2 rounded-lg bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-300 text-[#0A192F] shadow-md hover:shadow-xl transition-all duration-300 text-center"
             >
-              Connect
+              SECURITY SOLUTION
             </Link>
           </motion.div>
         </>

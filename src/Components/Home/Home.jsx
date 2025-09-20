@@ -12,29 +12,40 @@ import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 export default function Home() {
   // Array of slides
   const slides = [
-    {
-      img: "https://i.pinimg.com/1200x/c7/ce/f3/c7cef3574267b65c72dd65c1da27e22c.jpg",
-      title: "Professional Security Guards",
+
+   {
+      img: "slider-0.jpg",
+      title: "G3 Groups",
       subtitle: "Trained and reliable guards ensuring 24/7 safety.",
     },
     {
-      img: "/Housekeeping.jpg",
-      title: "Housekeeping Services",
+      img: "slider-2.0.jpg",
+      title: "Professional Security Guards",
+      subtitle: "Trained and reliable guards ensuring 24/7 safety.",
+    },
+        {
+      img: "slider-0.jpg",
+      title: "G3 Groups",
+      subtitle: "Trained and reliable guards ensuring 24/7 safety.",
+    },
+    {
+      img: "/slider-3.JPG",
+      title: "Female workforce",
       subtitle: "Maintain hygiene and cleanliness with our expert staff.",
     },
     {
-      img: "Manpower.jpg",
+      img: "/slider-4.JPG",
       title: "Manpower Solutions",
       subtitle: "Providing skilled workforce for diverse industries.",
     },
     {
-      img: "Technicalman.jpg",
+      img: "slider-1.jpg",
       title: "Corporate Facility Management",
       subtitle: "End-to-end solutions for businesses and enterprises.",
     },
     {
-      img: "EventSecurity.jpg",
-      title: "Event Security",
+      img: "slider-0.jpg",
+      title: "G3 Groups",
       subtitle: "Safe and reliable security for events of all scales.",
     },
   ];
@@ -137,7 +148,7 @@ export default function Home() {
               About Us
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A192F] mt-3">
-              Trusted Security Solutions Since 2001
+              Trusted Security Solutions Since 2014
             </h2>
             <p className="mt-6 text-gray-600">
               Our professional guards and monitoring systems keep your premises
@@ -191,6 +202,12 @@ export default function Home() {
             "partner7.jpg",
             "partner8.jpg",
             "partner9.jpg",
+            "partner10.jpg",
+            "partner11.jpg",
+            "partner12.png",
+            "partner13.jpg",
+            
+
           ].map((logo, idx) => (
             <img
               key={idx}

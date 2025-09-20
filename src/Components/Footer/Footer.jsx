@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a1931] text-white mt-16">
+    <footer className="relative bg-[#0a1931] text-white mt-16 overflow-hidden">
       {/* Wavy Top Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
         <svg
@@ -42,12 +42,10 @@ export default function Footer() {
 
             <p className="flex flex-col text-gray-300 space-y-2 mt-4">
               <span className="flex items-center">
-                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 /
-                +91 8463895466
+                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 / +91 8085853806
               </span>
               <span className="flex items-center">
-                <FaEnvelope className="mr-2 text-yellow-400" />{" "}
-                ganesh.giri76@gmail.com
+                <FaEnvelope className="mr-2 text-yellow-400" /> ganesh.giri76@gmail.com
               </span>
               <span className="flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-yellow-400" /> PLOT NO. 253,
@@ -57,21 +55,17 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="grid grid-cols-2 gap-12 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-12 sm:grid-cols-3 relative">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-yellow-400 uppercase tracking-wide">
                 Resources
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <Link to="/" className="hover:text-yellow-400 transition">
-                    Home
-                  </Link>
+                  <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:text-yellow-400 transition">
-                    About
-                  </Link>
+                  <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
                 </li>
               </ul>
             </div>
@@ -82,19 +76,12 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="hover:text-yellow-400 transition"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href="#" className="hover:text-yellow-400 transition" target="_blank" rel="noreferrer">
                     Contact
                   </a>
                 </li>
                 <li>
-                  <Link to="/" className="hover:text-yellow-400 transition">
-                    Discord
-                  </Link>
+                  <Link to="/" className="hover:text-yellow-400 transition">Discord</Link>
                 </li>
               </ul>
             </div>
@@ -105,17 +92,20 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-300 space-y-2">
                 <li>
-                  <Link to="#" className="hover:text-yellow-400 transition">
-                    Privacy Policy
-                  </Link>
+                  <Link to="#" className="hover:text-yellow-400 transition">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:text-yellow-400 transition">
-                    Terms & Conditions
-                  </Link>
+                  <Link to="#" className="hover:text-yellow-400 transition">Terms & Conditions</Link>
                 </li>
               </ul>
             </div>
+
+            {/* ✅ Peacock Feather Image */}
+            <img
+              src="/peacock.png"
+              alt="Peacock Feather"
+              className="absolute -bottom-[72px] right-0 w-32 opacity-80 hover:opacity-100 transition"
+            />
           </div>
         </div>
 

@@ -79,8 +79,8 @@ const TestimonialSection = () => {
   };
 
   // ✅ Counters
-  const services = useCounter(1200, inView);
-  const companies = useCounter(850, inView);
+  const services = useCounter(2000, inView);
+  const companies = useCounter(40, inView);
   const teams = useCounter(65, inView);
   const members = useCounter(4300, inView);
 
@@ -167,7 +167,7 @@ const TestimonialSection = () => {
     <AnimatePresence mode="wait">
       <motion.img
         key={index}
-        src={["/testimonial.jpg", "/Housekeeping.jpg", "/EventSecurity.jpg"][index % 3]} 
+        src={["/testimonial.jpg", "/team-1.jpg", "/EventSecurity.jpg"][index % 3]} 
         alt="Our Team"
         className="w-full h-[400px] object-cover"
         initial={{ opacity: 0, scale: 1.05 }}

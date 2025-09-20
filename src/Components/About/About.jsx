@@ -1,13 +1,50 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import React from "react";
+import { motion } from "framer-motion";
 import "./About.css";
+import { Helmet } from "react-helmet-async";
+
 
 export default function About() {
-  const [showMore, setShowMore] = useState(false);
+  const higherTeam = [
+    { name: "Mr. Rajesh Sharma", role: "Founder & CEO", img: "/team1.jpg" },
+    { name: "Ms. Priya Verma", role: "Director of Operations", img: "/team2.jpg" },
+    { name: "Mr. Anil Gupta", role: "Head of Security", img: "/team3.jpg" },
+  ];
+
+  const teamMembers = [
+    { name: "Rahul Singh", role: "Senior Manager", img: "/t-1.png" },
+    { name: "Neha Patel", role: "HR Manager", img: "/t-2.png" },
+    { name: "Amit Kumar", role: "Operations Lead", img: "/t-3.png" },
+    { name: "Simran Kaur", role: "Training Supervisor", img: "/t-4.png" },
+    { name: "Vikas Yadav", role: "Tech & Monitoring", img: "/t-5.png" },
+    { name: "Rohit Sharma", role: "Field Officer", img: "/t-6.png" },
+    { name: "Ananya Gupta", role: "Finance Head", img: "/t-7.png" },
+    { name: "Karan Mehta", role: "Compliance Officer", img: "/t-8.jpg" },
+    { name: "Sonal Jain", role: "Client Relations", img: "/t-9.jpg" },
+    { name: "Sonal Jain", role: "Client Relations", img: "/t-10.jpg" },
+    
+
+ ];
+
+  const certifications = [
+    "/cert1.jpeg",
+    "/cert2.jpeg",
+    "/cert3.jpeg",
+    "/cert4.jpeg",
+    "/cert5.jpeg",
+  ];
 
   return (
+
+    
     <section className="relative bg-gradient-to-b from-white via-white to-yellow-50 text-gray-900 overflow-hidden">
+       <Helmet>
+        <title>About Us | G3 Security</title>
+        <meta
+          name="description"
+          content="Learn about G3 Security’s history, mission, and team of experts delivering intelligence and cyber advisory services globally."
+        />
+      </Helmet>
       {/* Top Wavy Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
         <svg
@@ -30,32 +67,42 @@ export default function About() {
         </svg>
       </div>
 
-      {/* Content */}
+      {/* Main Intro Section */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 lg:px-12 py-20 relative z-10">
-        {/* Left Image Section */}
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="relative flex justify-center items-start"
-        >
-          <img
-            src="/manpng.png"
-            alt="About us"
-            className="rounded-3xl shadow-lg w-full max-w-[450px] h-auto object-cover border border-yellow-200"
-          />
+       {/* Left Image Section */}
+<motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+  className="relative flex flex-col items-center text-center"
+>
+  {/* Owner Image */}
+  <div className="relative">
+    <img
+      src="/Owner.png"
+      alt="About us"
+      className="rounded-3xl shadow-lg w-full max-w-[320px] h-auto object-cover border border-yellow-200"
+    />
 
-          {/* Floating Badge */}
-          <motion.div
-            className="absolute -bottom-6 -left-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold px-6 py-4 rounded-2xl shadow-xl"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ repeat: Infinity, duration: 3 }}
-          >
-            <p className="text-3xl">15+</p>
-            <span className="text-sm">Years of Expertise</span>
-          </motion.div>
-        </motion.div>
+    {/* Floating Badge */}
+    <motion.div
+      className="absolute -bottom-6 -left-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-bold px-6 py-4 rounded-2xl shadow-xl"
+      initial={{ scale: 0.8 }}
+      animate={{ scale: [1, 1.1, 1] }}
+      transition={{ repeat: Infinity, duration: 3 }}
+    >
+      <p className="text-3xl">30+</p>
+      <span className="text-sm">Years of Expertise</span>
+    </motion.div>
+  </div>
+
+  {/* Owner Info */}
+  <div className="mt-10">
+    <h3 className="text-2xl font-bold text-gray-900">Mr. Ganesh Goswami</h3>
+    <p className="text-lg font-semibold text-yellow-600">Founder & Director</p>
+  </div>
+</motion.div>
+
 
         {/* Right Text Section */}
         <motion.div
@@ -71,71 +118,98 @@ export default function About() {
             G3 Group Enterprises
           </h2>
           <p className="mt-6 text-gray-700 leading-relaxed">
-            At G3 Security, we specialize in providing reliable and professional
-            manpower workforce solutions across Bhopal, India. With years of
-            expertise in security and workforce management, we’re trusted by
-            businesses, residential complexes, educational institutions, and
-            events.
+            At G3 Security, we take pride in delivering reliable and professional manpower solutions across Bhopal and beyond. Since our humble beginning in 2014 with just 5 personnel, we have grown into a trusted organization with 2000+ dedicated manpower and 40+ satisfied clients across diverse industries.
+
+With over 30 years of collective expertise, G3 Security has become a pillar of trust, discipline, and professionalism in the security and workforce management sector.
+
+Our journey is inspired and guided by the vision of Mr. Ganesh Goswami, the esteemed Founder & Director of G3 Security Group. Known for his polite demeanor, strong leadership, and inspiring personality, he has been the driving force behind transforming G3 Security into a name synonymous with excellence and integrity.
+
+We are not just a manpower provider — we are your partners in safety, efficiency, and growth.
           </p>
-
-          {/* Expandable Section */}
-          <AnimatePresence>
-            {showMore && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.6 }}
-                className="overflow-hidden"
-              >
-                <p className="mt-4 text-gray-700 leading-relaxed">
-                  Our mission is simple – to deliver well-trained, disciplined,
-                  and committed personnel who ensure safety, efficiency, and
-                  peace of mind for our clients.
-                </p>
-
-                <h3 className="mt-6 text-yellow-700 font-semibold">
-                  ✨ Why Choose G3 Security?
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {[
-                    "Skilled Workforce – Professionally trained guards, supervisors, and support staff.",
-                    "Tailored Services – Customized manpower solutions to fit diverse business needs.",
-                    "Trusted in Bhopal – Serving industries, corporates, and individuals with integrity.",
-                    "24/7 Availability – Round-the-clock workforce deployment and monitoring.",
-                    "Affordable & Reliable – High-quality manpower services at competitive rates.",
-                  ].map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2 text-gray-700"
-                    >
-                      <CheckCircleIcon className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <h3 className="mt-6 text-yellow-700 font-semibold">
-                  🌍 Our Vision
-                </h3>
-                <p className="mt-2 text-gray-700 leading-relaxed">
-                  To be the leading manpower and security services provider in
-                  Bhopal, recognized for our professionalism, reliability, and
-                  client satisfaction.
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* CTA Button */}
-          <button
-            className="mt-8 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:from-yellow-500 hover:to-yellow-600 transition-all"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? "Show Less" : "Learn More"}
-          </button>
         </motion.div>
       </div>
+
+     {/* Team Section */}
+<section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
+    Our <span className="text-[#E0BD67]">Leadership</span> & <span className="text-[#E0BD67]">Team</span>
+  </h2>
+
+  {/* Top Leadership */}
+  <div className="grid md:grid-cols-3 gap-8 mb-16">
+    {[
+      { name: "Mr. Ghanshyam Goswami", role: "Managing Director", img: "/leader1.jpg" },
+      { name: "Mr.Sandeep Patel", role: "General Manager", img: "/leader2.png" },
+      { name: "B.K Rawat (Ex-BSF)", role: "Branch Manager (Security)", img: "/leader3.png" },
+    ].map((member, idx) => (
+      <div key={idx} className="flex flex-col items-center text-center">
+        <img
+          src={member.img}
+          alt={member.name}
+          className="w-[280px] h-[290px] object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
+        />
+        <h3 className="mt-4 text-lg font-semibold text-gray-900">{member.name}</h3>
+        <p className="text-yellow-600 text-sm">{member.role}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* Team Members */}
+<div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+  {teamMembers.map((member, idx) => (
+    <div key={idx} className="flex flex-col items-center text-center">
+      <img
+        src={member.img}
+        alt={member.name}
+        className="w-[200px] h-[200px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform"
+      />
+      <h4 className="mt-3 text-base font-semibold text-gray-900">
+        {member.name}
+      </h4>
+      <p className="text-sm font-medium text-yellow-600">
+        {member.role}
+      </p>
+    </div>
+  ))}
+</div>
+
+</section>
+
+{/* Certifications Section */}
+<section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
+  <span className="text-[#E0BD67]"> G3 Security</span> Registrations & Certifications
+  </h2>
+
+  <div className="mr-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    {[1,2,3,4].map((id) => (
+      <img
+        key={id}
+        src={`/cert${id}.jpeg`}
+        alt={`Certification ${id}`}
+        className="w-full h-[280px] object-contain bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform"
+      />
+    ))}
+  </div>
+</section>
+{/* Certifications Section */}
+<section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
+   <span className="text-[#E0BD67]"> G3 Enterprises</span> Registrations & Certifications
+  </h2>
+
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    {[1,2,3,4,5].map((id) => (
+      <img
+        key={id}
+        src={`/cert${id}.jpeg`}
+        alt={`Certification ${id}`}
+        className="w-full h-[280px] object-contain bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform"
+      />
+    ))}
+  </div>
+</section>
+
 
       {/* Bottom Wavy Divider */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
