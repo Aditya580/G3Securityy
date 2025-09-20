@@ -42,7 +42,7 @@ export default function About() {
         <title>About Us | G3 Security</title>
         <meta
           name="description"
-          content="Learn about G3 Security’s history, mission, and team of experts delivering intelligence and cyber advisory services globally."
+          content="G3 Security, founded in 2014 by Mr. Ganesh Goswami, delivers reliable manpower and security solutions across Bhopal and beyond. With 2000+ trained personnel and 40+ satisfied clients, we are trusted for discipline, professionalism, and excellence in workforce management"
         />
       </Helmet>
       {/* Top Wavy Divider */}
