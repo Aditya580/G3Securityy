@@ -36,16 +36,16 @@ export default function Footer() {
                 alt="Logo"
               />
               <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                G3 Security
+                G3 Group
               </span>
             </Link>
 
             <p className="flex flex-col text-gray-300 space-y-2 mt-4">
               <span className="flex items-center">
-                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 / +91 8085853806
+                <FaPhoneAlt className="mr-2 text-yellow-400" /> +91 9685473316 / +91 8463895466
               </span>
               <span className="flex items-center">
-                <FaEnvelope className="mr-2 text-yellow-400" /> ganesh.giri76@gmail.com
+                <FaEnvelope className="mr-2 text-yellow-400" />Sonug3office@gmail.com
               </span>
               <span className="flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-yellow-400" /> PLOT NO. 253,

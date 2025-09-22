@@ -6,17 +6,17 @@ import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft } from "react-icons/
 // ✅ Testimonials Data
 const testimonials = [
   {
-    name: "Aarav Sharma",
+    name: "Mr.Anil Nagar ",
     profession: "Business Owner",
     feedback:
-      "G3 Security has been protecting our facilities for over 3 years. Their professionalism and attention to detail is outstanding. We feel completely secure with their team.",
+      "I would rate the service 10/10. The Manpower provided is very good and reliable and the behaviour of G3 staff is truly commendable. Overall a very Professional and Satisfying Experience",
     rating: 5,
   },
   {
-    name: "Neha Patel",
+    name: "Mr.Patel",
     profession: "HR Manager",
     feedback:
-      "The level of service from G3 Security is exceptional. Their guards are well-trained, professional, and always alert. I highly recommend their services.",
+      "The Guards are very Honest , Hardworking and well aware of their duties. I highly recommend their services.",
     rating: 5,
   },
   {
@@ -79,10 +79,10 @@ const TestimonialSection = () => {
   };
 
   // ✅ Counters
-  const services = useCounter(2000, inView);
+  const services = useCounter(30, inView);
   const companies = useCounter(40, inView);
-  const teams = useCounter(65, inView);
-  const members = useCounter(4300, inView);
+  const hours = useCounter(24, inView);
+  const members = useCounter(2000, inView);
 
   return (
     <div
@@ -167,7 +167,7 @@ const TestimonialSection = () => {
     <AnimatePresence mode="wait">
       <motion.img
         key={index}
-        src={["/testimonial.jpg", "/team-1.jpg", "/EventSecurity.jpg"][index % 3]} 
+        src={["/testimonial.jpg", "/team-1.jpg", "/Gallery2.jpg"][index % 3]} 
         alt="Our Team"
         className="w-full h-[400px] object-cover"
         initial={{ opacity: 0, scale: 1.05 }}
@@ -211,19 +211,19 @@ const TestimonialSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-16">
           <div>
             <h2 className="text-4xl font-bold text-[#E0BD67]">{services}+</h2>
-            <p className="text-gray-600 mt-2">Services Delivered</p>
+            <p className="text-gray-600 mt-2">Years of Expereince</p>
           </div>
           <div>
             <h2 className="text-4xl font-bold text-[#E0BD67]">{companies}+</h2>
             <p className="text-gray-600 mt-2">Companies Served</p>
           </div>
           <div>
-            <h2 className="text-4xl font-bold text-[#E0BD67]">{teams}+</h2>
-            <p className="text-gray-600 mt-2">Teams Built</p>
+            <h2 className="text-4xl font-bold text-[#E0BD67]">{hours}/7</h2>
+            <p className="text-gray-600 mt-2">Availability</p>
           </div>
           <div>
             <h2 className="text-4xl font-bold text-[#E0BD67]">{members}+</h2>
-            <p className="text-gray-600 mt-2">Members Supported</p>
+            <p className="text-gray-600 mt-2">Manpower Supported</p>
           </div>
         </div>
       </div>

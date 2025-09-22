@@ -45,6 +45,22 @@ export default function Connect() {
     }, sectionRef);
 
     return () => ctx.revert();
+
+    // Animate service cards
+gsap.utils.toArray(".group").forEach((card, i) => {
+  gsap.from(card, {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    delay: i * 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+    },
+  });
+});
+
   }, []);
 
   return (
@@ -100,52 +116,153 @@ export default function Connect() {
           </div>
         ))}
       </section>
+{/* Services Section */}
+<section className="bg-gradient-to-r from-yellow-50 to-white py-20 fade-up">
+  <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-16">
+      Our <span className="text-yellow-600">Services</span>
+    </h2>
 
-      {/* Services Section */}
-      <section className="bg-gradient-to-r from-yellow-50 to-white py-16 fade-up">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-            Our <span className="text-yellow-600">Services</span>
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Armed Security",
-                desc: "Well-trained armed guards for critical infrastructure & VIPs.",
-                img: "/g-3.jpg",
-              },
-              {
-                title: "Corporate Security",
-                desc: "Professional guards ensuring safety in business complexes.",
-                img: "/services/reporting.jpg",
-              },
-              {
-                title: "Manpower Supply",
-                desc: "Reliable workforce tailored for your organizational needs.",
-                img: "/g-1.jpg",
-              },
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="relative group rounded-xl overflow-hidden shadow-md border border-yellow-200"
-              >
-                <img
-                  src={service.img}
-                  alt={service.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex flex-col justify-center items-center text-white transition">
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm max-w-xs text-center">{service.desc}</p>
-                  <button className="mt-4 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg shadow-md">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {[
+        {
+          title: "Armed Security",
+          desc: "Highly trained armed guards ensuring maximum safety for VIPs, banks, and critical infrastructure.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12l2 2l4 -4m6 2a9 9 0 11-18 0a9 9 0 0118 0z"
+              />
+            </svg>
+          ),
+        },
+        {
+          title: "Corporate Security",
+          desc: "End-to-end security solutions for IT parks, offices, and corporate spaces with 24/7 monitoring.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 7l9-4l9 4v6c0 5-3 9-9 11c-6-2-9-6-9-11V7z"
+              />
+            </svg>
+          ),
+        },
+        {
+          title: "Manpower Supply",
+          desc: "Dedicated, trained, and reliable workforce customized to your industry and organizational needs.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 20h5V9H2v11h5m10-9v10M9 11v10"
+              />
+            </svg>
+          ),
+        },
+        {
+          title: "Event Security",
+          desc: "Crowd management, access control, and professional guards for concerts, expos, and events.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 8c-1.657 0-3 1.343-3 3c0 1.657 1.343 3 3 3s3-1.343 3-3c0-1.657-1.343-3-3-3zm0 11c4.418 0 8-3.582 8-8c0-4.418-3.582-8-8-8S4 6.582 4 11c0 4.418 3.582 8 8 8z"
+              />
+            </svg>
+          ),
+        },
+        {
+          title: "Retail Security",
+          desc: "Trusted guards and surveillance for malls, shops, and retail outlets ensuring asset safety.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 7h18M3 12h18M3 17h18"
+              />
+            </svg>
+          ),
+        },
+        {
+          title: "24/7 Surveillance",
+          desc: "Modern CCTV & monitoring systems with real-time alerts for complete peace of mind.",
+          icon: (
+            <svg
+              className="w-14 h-14 text-yellow-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 12a3 3 0 11-6 0a3 3 0 016 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.065 7-9.542 7s-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          ),
+        },
+      ].map((service, i) => (
+        <div
+          key={i}
+          className="group bg-white border border-yellow-200 p-8 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-2 transition transform relative overflow-hidden"
+        >
+          <div className="flex justify-center mb-6">{service.icon}</div>
+          <h3 className="text-xl font-bold text-gray-900 text-center">
+            {service.title}
+          </h3>
+          <p className="mt-3 text-gray-600 text-center">{service.desc}</p>
+
+          {/* Hover Effect Glow */}
+          <div className="absolute inset-0 bg-yellow-100 opacity-0 group-hover:opacity-20 transition" />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Gallery Section */}
       <section className="py-20 fade-up">
@@ -156,7 +273,7 @@ export default function Connect() {
           {[1, 2, 3, 4, 5, 6].map((id) => (
             <img
               key={id}
-              src={`/gallery${id}.jpg`}
+              src={`/Gallery${id}.jpg`}
               alt={`Gallery ${id}`}
               className="gallery-img w-full h-64 object-cover rounded-xl shadow-md hover:scale-105 transition-transform"
             />

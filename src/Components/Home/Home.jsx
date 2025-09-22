@@ -6,6 +6,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
+import HeroSlider from "../Header/HeroSlider";
 import TestimonialSection from "../TestimonialSection/TestimonialSection";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
@@ -15,8 +16,8 @@ export default function Home() {
     {
       img: "slider-0.jpg",
       mobileImg: "slider-0-mobile.jpg",
-      title: "G3 Groups",
-      subtitle: "Trained and reliable guards ensuring 24/7 safety.",
+      title: " ",
+      subtitle: " ",
     },
     {
       img: "slider-2.0.jpg",
@@ -33,8 +34,8 @@ export default function Home() {
     {
       img: "slider-0.jpg",
       mobileImg: "slider-0-mobile.jpg",
-      title: "G3 Groups",
-      subtitle: "Trained and reliable guards ensuring 24/7 safety.",
+      title: " ",
+      subtitle: " ",
     },
     {
       img: "/slider-4.JPG",
@@ -43,10 +44,10 @@ export default function Home() {
       subtitle: "Providing skilled workforce for diverse industries.",
     },
     {
-      img: "slider-0.jpg",
+      img: "slider-0-min.jpg",
       mobileImg: "slider-0-mobile.jpg",
-      title: "G3 Groups",
-      subtitle: "Trained and reliable guards ensuring 24/7 safety.",
+      title: " ",
+      subtitle: " ",
     },
     {
       img: "slider-5.jpg",
@@ -78,55 +79,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-   <section className="relative w-full overflow-hidden">
-  <div className="relative w-full h-[60vh] md:h-[65vh] lg:h-[90vh]">
-    <AnimatePresence mode="sync">
-      <motion.div
-        key={index}
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "-100%" }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="absolute inset-0 w-full h-full"
-      >
-        <img
-          src={
-            window.innerWidth < 768
-              ? slides[index].mobileImg || slides[index].img
-              : slides[index].img
-          }
-          alt="Hero Slide"
-          className="w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-[#E0BD67]/40 to-transparent flex items-center justify-center">
-          <div className="text-center text-white px-6 drop-shadow-lg">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2">
-              {slides[index].title}
-            </h1>
-            <p className="text-sm sm:text-base md:text-xl">
-              {slides[index].subtitle}
-            </p>
-          </div>
-        </div>
-      </motion.div>
-    </AnimatePresence>
-
-    {/* Navigation Arrows */}
-    <button
-      onClick={prevSlide}
-      className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 bg-[#E0BD67] p-2 sm:p-3 rounded-full text-[#0A192F] shadow-lg hover:bg-yellow-400 transition z-10"
-    >
-      <ChevronLeftIcon className="w-5 sm:w-6 h-5 sm:h-6" />
-    </button>
-    <button
-      onClick={nextSlide}
-      className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 bg-[#E0BD67] p-2 sm:p-3 rounded-full text-[#0A192F] shadow-lg hover:bg-yellow-400 transition z-10"
-    >
-      <ChevronRightIcon className="w-5 sm:w-6 h-5 sm:h-6" />
-    </button>
-  </div>
-</section>
+    <HeroSlider/>
 
       {/* About Section */}
       <section className="bg-white relative py-16 md:py-20">
@@ -134,12 +87,12 @@ export default function Home() {
           {/* Left Images */}
           <div className="relative flex flex-col items-center md:items-start">
             <img
-              src="https://i.pinimg.com/1200x/c7/ce/f3/c7cef3574267b65c72dd65c1da27e22c.jpg"
+              src="about2.jpg"
               alt="Team"
               className="w-64 sm:w-72 h-56 sm:h-64 object-cover rounded-2xl shadow-lg border-4 border-[#E0BD67]"
             />
             <img
-              src="https://i.pinimg.com/1200x/74/9e/9c/749e9c58a5768d488ddfc3da63b16b80.jpg"
+              src="about1.jpg"
               alt="Team"
               className="w-56 sm:w-64 h-48 sm:h-56 object-cover rounded-2xl shadow-lg absolute -bottom-10 left-16 sm:left-20 border-4 border-[#E0BD67]"
             />
@@ -215,6 +168,9 @@ export default function Home() {
             "partner11.jpg",
             "partner12.png",
             "partner13.jpg",
+            "partner14.png",
+            "partner15.png",
+             
           ].map((logo, idx) => (
             <img
               key={idx}

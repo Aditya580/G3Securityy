@@ -1,160 +1,145 @@
 import React from "react";
 import {
-  FaBook,
-  FaCalculator,
-  FaMoneyCheckAlt,
-  FaClipboardCheck,
-  FaMoneyBillWave,
-  FaFileInvoice,
+  FaUserShield,
+  FaUsersCog,
+  FaHardHat,
+  FaBroom,
+  FaBuilding,
+  FaTruckLoading,
+  FaTools,
 } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom"; // if using React Router
-
+import { Link } from "react-router-dom";
 
 const services = [
   {
     title: "Retail Security",
-    description:
-      "Precise and timely recording of financial transactions to maintain well-organized financial records.",
-    icon: <FaBook />,
-    img: "/g2.jpg",
-    link: "/services/retail-security",
+    description: "Professional guards ensuring safety in malls, shops, and retail outlets.",
+    icon: <FaUserShield className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/Retailsecurity.jpg",
+    link: "/retail-security",
   },
   {
     title: "Manpower Services",
-    description:
-      "Holistic accounting solutions to ensure your financial statements are accurate and compliant.",
-    icon: <FaCalculator />,
-    img: "/g-1.jpg",
-    link: "/services/manpower-services",
-  },
-  {
-    title: "Armed Security Guards",
-    description: "Streamlined handling of payables and receivables to optimize cash flow.",
-    icon: <FaMoneyCheckAlt />,
-    img: "/g-3.jpg",
-    link: "/services/armed-guards",
+    description: "Skilled manpower supply to meet your business and operational needs.",
+    icon: <FaUsersCog className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/Gallery6.jpg",
+    link: "/manpower",
   },
   {
     title: "Technical Manpower",
-    description:
-      "Comprehensive assistance in preparing and organizing financial data for seamless audits.",
-    icon: <FaClipboardCheck />,
-    img: "/g-4.jpg",
-    link: "/services/technical-manpower",
+    description: "Expert technicians for specialized industrial and technical roles.",
+    icon: <FaTools className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/technicalmanpower.jpg",
+    link: "/technicalmanpower",
   },
   {
     title: "Housekeeping Services",
-    description: "Dependable payroll management to ensure timely and accurate employee payments.",
-    icon: <FaMoneyBillWave />,
-    img: "/g-5.jpg",
-    link: "/services/housekeeping",
-  },
-  {
-    title: "Unarmed Security Guards",
-    description:
-      "Expert guidance on tax planning and preparation to ensure compliance with local regulations.",
-    icon: <FaFileInvoice />,
-    img: "/g-6.jpg",
-    link: "/services/unarmed-guards",
+    description: "Reliable housekeeping staff for clean and hygienic workplaces.",
+    icon: <FaBroom className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/houskeepinglabour.png",
+    link: "/housekeeping",
   },
   {
     title: "Corporate Security Guards",
-    description:
-      "Helps in analyzing financial data, tracking expenses, and creating accurate forecasts to optimize business growth.",
-    icon: <FaFileInvoice />,
-    img: "/services/reporting.jpg",
-    link: "/services/corporate-security",
+    description: "Trained guards to protect your offices, assets, and employees.",
+    icon: <FaBuilding className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/corporatesecurity.png",
+    link: "/corporate-security",
   },
   {
-    title: "Loading Unloading Services",
-    description:
-      "Ensures smooth financial operations by monitoring incoming and outgoing cash, preventing shortages, and maintaining liquidity.",
-    icon: <FaFileInvoice />,
-    img: "/services/cashflow.jpg",
-    link: "/services/loading-unloading",
+    title: "Loading & Unloading Services",
+    description: "Dedicated workforce for safe and efficient loading/unloading operations.",
+    icon: <FaTruckLoading className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/loadinglabour.png",
+    link: "/loading",
   },
   {
     title: "Construction Security",
-    description:
-      "Reviewing, correcting, and organizing financial records to eliminate errors, reconcile accounts, and ensure compliance.",
-    icon: <FaFileInvoice />,
-    img: "/services/cleanup.jpg",
-    link: "/services/construction-security",
+    description: "Security teams specialized for construction sites and heavy projects.",
+    icon: <FaHardHat className="text-yellow-600 text-3xl sm:text-4xl" />,
+    img: "/conssecurity.png",
+    link: "/construction-security",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="relative bg-gradient-to-b from-white to-gray-50 py-20 text-gray-900">
-        <Helmet>
-        <title>About Us | G3 Security</title>
+    <section className="relative bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 text-gray-900">
+      <Helmet>
+        <title>Services | G3 Security</title>
         <meta
           name="description"
-          content="Learn about G3 Security’s history, mission, and team of experts delivering intelligence and cyber advisory services globally."
+          content="Explore G3 Security services – from manpower supply to corporate guards, retail security, and more."
         />
       </Helmet>
-      {/* Decorative top waves */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
-        <svg
-          className="relative block w-full h-20 text-yellow-400/20"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
-        >
-          <path
-            d="M0,0V46.29c47.74,22,103.78,29.05,158,17.39,70.05-15.15,136.29-57.3,206-66.85C438.48-13.15,512.34,19.9,583,35.78,663,54.22,743,60,823,44.27c70.05-13.93,136.29-46.08,206-56.63,55.1-8.35,111.15-1.3,158,20.74V0Z"
-            opacity=".25"
-            fill="currentColor"
-          ></path>
-        </svg>
+
+      {/* Heading */}
+      <div className="text-center mb-12 sm:mb-16 px-4 sm:px-6">
+        <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent mb-3 sm:mb-4">
+          Our Services
+        </h1>
+        <p className="text-gray-600 max-w-2xl mx-auto text-base sm:text-lg">
+          At <span className="font-semibold">G3 Security</span>, we provide
+          trusted manpower and security solutions for businesses, events, and
+          industries. Choose the service that fits your needs.
+        </p>
       </div>
 
-      <div className="relative container mx-auto px-6 lg:px-20 z-10">
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent mb-4">
-            Our Services
-          </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            At G3 Security, we provide reliable manpower solutions tailored to
-            your needs. From skilled workforce to specialized support, we ensure
-            security and efficiency at every step.
-          </p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Services Grid */}
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-20 z-10">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div
+            <Link
+              to={service.link}
               key={index}
-              className="relative bg-white border border-yellow-200 rounded-2xl shadow-md overflow-hidden group hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 transition duration-300"
+              className="group bg-white border border-yellow-100 rounded-2xl shadow-md overflow-hidden hover:shadow-xl hover:border-yellow-400 transition duration-300 flex flex-col"
             >
-              {/* Background Image */}
-              <img
-                src={service.img}
-                alt={service.title}
-                className="w-full h-56 object-cover transition duration-500"
-              />
+              {/* Image */}
+              <div className="relative">
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover group-hover:scale-105 transition duration-500"
+                />
+                {/* Icon Badge */}
+                <div className="absolute -bottom-6 left-4 sm:left-6 bg-white p-2 sm:p-3 rounded-full shadow-md border border-yellow-200">
+                  {service.icon}
+                </div>
+              </div>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100 transition duration-500">
-                <h3 className="text-xl font-bold text-white mb-3">
+              {/* Card Content */}
+              <div className="p-4 sm:p-6 pt-10 flex flex-col flex-grow">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 group-hover:text-yellow-600 transition">
                   {service.title}
                 </h3>
-                <p className="text-gray-200 text-sm mb-4">
+                <p className="text-gray-600 text-sm sm:text-base flex-grow">
                   {service.description}
                 </p>
-                <Link
-                  to={service.link}
-                  className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:from-yellow-500 hover:to-yellow-700 transition"
-                >
-                  Read More
-                </Link>
+                <span className="mt-3 sm:mt-4 inline-block font-semibold text-yellow-600 group-hover:text-yellow-700 text-sm sm:text-base">
+                  Read More →
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="mt-16 sm:mt-20 text-center px-4">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
+          Need Security or Manpower Support?
+        </h2>
+        <p className="text-gray-600 mb-5 sm:mb-6 text-sm sm:text-base max-w-xl mx-auto">
+          Our team is just a call away. Let us provide you with the right
+          professionals for your needs.
+        </p>
+        <Link
+          to="/contact"
+          className="w-full sm:w-auto block sm:inline-block bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:from-yellow-600 hover:to-yellow-800 transition text-center"
+        >
+          Contact Us Today
+        </Link>
       </div>
     </section>
   );

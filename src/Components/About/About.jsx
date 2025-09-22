@@ -12,16 +12,15 @@ export default function About() {
   ];
 
   const teamMembers = [
-    { name: "Rahul Singh", role: "Senior Manager", img: "/t-1.png" },
-    { name: "Neha Patel", role: "HR Manager", img: "/t-2.png" },
-    { name: "Amit Kumar", role: "Operations Lead", img: "/t-3.png" },
-    { name: "Simran Kaur", role: "Training Supervisor", img: "/t-4.png" },
-    { name: "Vikas Yadav", role: "Tech & Monitoring", img: "/t-5.png" },
-    { name: "Rohit Sharma", role: "Field Officer", img: "/t-6.png" },
-    { name: "Ananya Gupta", role: "Finance Head", img: "/t-7.png" },
-    { name: "Karan Mehta", role: "Compliance Officer", img: "/t-8.jpg" },
-    { name: "Sonal Jain", role: "Client Relations", img: "/t-9.jpg" },
-    { name: "Sonal Jain", role: "Client Relations", img: "/t-10.jpg" },
+    { name: "Deepika Malviya", role: "HR Manager", img: "/t-8.jpg" },
+    { name: "Devendra Singh", role: "Traininng Officer", img: "/t-2.png" },
+    { name: "Rohit Thakur", role: "Senior Supervisor", img: "/t-3.png" },
+    { name: "Anish Malviya", role: "Supervisor(H.K)", img: "/t-4.png" },
+    { name: "Ramsevak Namdev", role: "Supervisor(H.K)", img: "/t-6.png" },
+    { name: "Saket Goswami", role: "Supervisor", img: "/t-5.png" },
+    { name: "Munna Lal Patel", role: "Field Officer", img: "/t-7.png" },
+    { name: "Dilip", role: "Houskeeping Supervisor", img: "/t-9.jpg" },
+    { name: "Manoj", role: "Field Supervisor", img: "/t-10.jpg" },
     
 
  ];
@@ -32,6 +31,13 @@ export default function About() {
     "/cert3.jpeg",
     "/cert4.jpeg",
     "/cert5.jpeg",
+    "/doc1.png",
+    "/doc2.png",
+    "/doc3.png",
+    "/doc4.png",
+    "/doc5.png",
+    "/doc6.png",
+    
   ];
 
   return (
@@ -138,7 +144,7 @@ We are not just a manpower provider — we are your partners in safety, efficien
   {/* Top Leadership */}
   <div className="grid md:grid-cols-3 gap-8 mb-16">
     {[
-      { name: "Mr. Ghanshyam Goswami", role: "Managing Director", img: "/leader1.jpg" },
+      { name: "Mr.Shinu Goswami", role: "Managing Director", img: "/leader1.jpg" },
       { name: "Mr.Sandeep Patel", role: "General Manager", img: "/leader2.png" },
       { name: "B.K Rawat (Ex-BSF)", role: "Branch Manager (Security)", img: "/leader3.png" },
     ].map((member, idx) => (
@@ -175,37 +181,59 @@ We are not just a manpower provider — we are your partners in safety, efficien
 
 </section>
 
-{/* Certifications Section */}
+{/* G3 Security Certifications */}
 <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
   <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
-  <span className="text-[#E0BD67]"> G3 Security</span> Registrations & Certifications
-  </h2>
-
-  <div className="mr-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-    {[1,2,3,4].map((id) => (
-      <img
-        key={id}
-        src={`/cert${id}.jpeg`}
-        alt={`Certification ${id}`}
-        className="w-full h-[280px] object-contain bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform"
-      />
-    ))}
-  </div>
-</section>
-{/* Certifications Section */}
-<section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
-   <span className="text-[#E0BD67]"> G3 Enterprises</span> Registrations & Certifications
+    <span className="text-[#E0BD67]">G3 Security</span> Registrations & Certifications
   </h2>
 
   <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-    {[1,2,3,4,5].map((id) => (
-      <img
-        key={id}
-        src={`/cert${id}.jpeg`}
-        alt={`Certification ${id}`}
-        className="w-full h-[280px] object-contain bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform"
-      />
+    {[
+      { id: 1, name: "ESIC Registration" },
+      { id: 2, name: "GOMASTA" },
+      { id: 3, name: "Incorporation Certificate" },
+      { id: 4, name: "PASARA License" },
+      { id: 5, name: "EPFO" },
+    ].map((cert) => (
+      <div key={cert.id} className="flex flex-col items-center bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform">
+        <img
+          src={`/cert${cert.id}.jpeg`}
+          alt={`Certification ${cert.id}`}
+          className="w-full h-64 object-contain mb-2"
+        />
+        <p className="text-center text-yellow-600 font-semibold text-sm sm:text-base">
+          {cert.name}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
+{/* G3 Enterprises Certifications */}
+<section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+  <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center mb-12">
+    <span className="text-[#E0BD67]">G3 Enterprises</span> Registrations & Certifications
+  </h2>
+
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    {[
+      { id: 1, name: "EPFO" },
+      { id: 2, name: "GST Certificate" },
+      { id: 3, name: "Otabu Certificate" },
+      { id: 4, name: "MSME Certificate" },
+      { id: 5, name: "GOMASTA" },
+      { id: 6, name: "Udhyam Certificate" },
+    ].map((cert) => (
+      <div key={cert.id} className="flex flex-col items-center bg-white rounded-xl shadow-lg p-4 hover:scale-105 transition-transform">
+        <img
+          src={`/doc${cert.id}.png`}
+          alt={`Certification ${cert.id}`}
+          className="w-full h-64 object-contain mb-2"
+        />
+        <p className="text-center text-yellow-600 font-semibold text-sm sm:text-base">
+          {cert.name}
+        </p>
+      </div>
     ))}
   </div>
 </section>
