@@ -144,7 +144,7 @@ export default function Loading() {
             and efficient</span>. We ensure your operations never slow down.
           </p>
           <img
-            src="/loadinglabour.png" // closing image
+            src="/loading2.png" // closing image
             alt="Loading Manpower"
             className="w-full max-w-4xl mx-auto rounded-xl shadow-lg"
           />
