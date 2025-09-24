@@ -17,7 +17,7 @@ export default function Contact() {
         <div className="space-y-6">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <span className="font-semibold text-yellow-500">Email:</span>
-            <a href="mailto:contact@g3group.com" className="text-gray-700 hover:text-yellow-500 transition">
+            <a href="mailto:Sonug3office@gmail.com" className="text-gray-700 hover:text-yellow-500 transition">
               Sonug3office@gmail.com
             </a>
           </div>
