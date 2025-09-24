@@ -66,7 +66,7 @@ export default function Loading() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/loadinglabour.png" // add relevant image
+            src="/loading2.png" // add relevant image
             alt="Loading Team"
             className="w-full lg:w-1/2 rounded-xl shadow-lg object-cover"
           />
