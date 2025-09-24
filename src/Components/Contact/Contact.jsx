@@ -1,8 +1,16 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   return (
     <section className="bg-gray-50 py-16 px-6 lg:px-20">
+           <Helmet>
+              <title>Contact Us | G3 Group</title>
+              <meta
+                name="description"
+                content="G3 Security, founded in 2014 by Mr. Ganesh Goswami, delivers reliable manpower and security solutions across Bhopal and beyond. With 2000+ trained personnel and 40+ satisfied clients, we are trusted for discipline, professionalism, and excellence in workforce management"
+              />
+            </Helmet>
       <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-12 border-2 border-yellow-500 text-center">
         {/* Header */}
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">

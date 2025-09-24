@@ -67,7 +67,7 @@ export default function Services() {
   return (
     <section className="relative bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 text-gray-900">
       <Helmet>
-        <title>Services | G3 Security</title>
+        <title>Services | G3 Group</title>
         <meta
           name="description"
           content="Explore G3 Security services – from manpower supply to corporate guards, retail security, and more."

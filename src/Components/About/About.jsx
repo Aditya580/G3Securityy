@@ -45,7 +45,7 @@ export default function About() {
     
     <section className="relative bg-gradient-to-b from-white via-white to-yellow-50 text-gray-900 overflow-hidden">
        <Helmet>
-        <title>About Us | G3 Security</title>
+        <title>About Us | G3 Group</title>
         <meta
           name="description"
           content="G3 Security, founded in 2014 by Mr. Ganesh Goswami, delivers reliable manpower and security solutions across Bhopal and beyond. With 2000+ trained personnel and 40+ satisfied clients, we are trusted for discipline, professionalism, and excellence in workforce management"
