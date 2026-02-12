@@ -157,6 +157,8 @@ export default function Home() {
           {[
             "/partner1.jpg",
             "partner5.jpg",
+            "partner16.jpeg",
+            "partner17.jpeg",
             "partner2.jpg",
             "partner3.jpg",
             "Partner6.jpg",
